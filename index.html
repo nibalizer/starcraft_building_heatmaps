@@ -40,6 +40,9 @@ $( "select#map_pick" )
       $("#container").css('width',"1000px");
       $("#container").css('height', "883px");
       $("#container").css('background-image', 'url("static/maps/Proxima_Station_LE.jpg")');
+      heat.clear();
+      frame = frame || window.requestAnimationFrame(draw);
+
     }
   })
   .change();
