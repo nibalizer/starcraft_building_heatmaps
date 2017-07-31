@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="static/js/simpleheat.js"></script>
+    <script src="static/js/jquery-1.11.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="static/css/styles.css">
+  </head>
+  <body>
+    <div id="container">
+        <canvas id="canvas" width="1200" height="1073"></canvas>
+    </div>
+    <script src="static/js/sc2_building_heatmap.js"> </script>
+    <div id="nav">
+      <b>Select Event</b>
+      <select name="Event">
+        <option value='valencia_2017'>WCS Valencia 2017</option>
+        <option value='hsc15' >Home Story Cup XV</option>
+      </select>
+      <b>Select Map</b>
+      <select id="map_pick" name="map_pick">
+        <option value='abyssal'>Abyssal Reef LE</option>
+        <option value='acension'>Ascension to Auir LE</option>
+        <option value='bloodboil'>Blood Boil LE</option>
+        <option value='defenders'>Defender's Landing LE</option>
+        <option value='odyssey'>Odyssey LE</option>
+        <option value='proxima'>Proxima Station LE</option>
+        <option value='sequencer'>Sequencer LE</option>
+      </select>
+    </div>
+<script>
+$( "select#map_pick" )
+  .change(function () {
+    var map = "";
+    $( "select#map_pick option:selected" ).each(function() {
+      map = $( this ).val();
+    });
+    console.log(map);
+    if (map == "proxima") {
+      console.log($("#container").css('background-image'));
+      $("#container").css('width',"1000px");
+      $("#container").css('height', "883px");
+      $("#container").css('background-image', 'url("static/maps/Proxima_Station_LE.jpg")');
+    }
+  })
+  .change();
+</script>
+</body>
+</html>
+
+
